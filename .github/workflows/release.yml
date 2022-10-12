@@ -1,0 +1,31 @@
+name: Project build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: "Build (${{ matrix.platform.name }})"
+
+    defaults:
+      run:
+        shell: bash
+
+    runs-on: ${{ matrix.platform.os }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - { name: "Windows, Clang-cl", os: windows-latest }
+          - { name: "macOS", os: macos-latest }
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Configure project
+        run: |
+          cmake -B build -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build project
+        run: |
+          cmake --build build --config Release

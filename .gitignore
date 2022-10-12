@@ -1,0 +1,10 @@
+.DS_Store
+build/
+out/
+temp/
+.vs/
+.vscode/
+CMakeSettings.json
+CMakePresets.json
+CMakeFiles/
+examples/
