@@ -1,0 +1,11 @@
+.DS_Store
+build/
+out/
+temp/
+.vs/
+.vscode/
+.clang-format
+CMakeSettings.json
+CMakePresets.json
+CMakeFiles/
+examples/

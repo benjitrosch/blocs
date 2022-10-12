@@ -1,0 +1,32 @@
+name: Project build
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    name: "Build (${{ matrix.platform.name }})"
+
+    defaults:
+      run:
+        shell: bash
+
+    runs-on: ${{ matrix.platform.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - { name: "Windows", os: windows-latest }
+          - { name: "MacOS", os: macos-latest }
+          - { name: "Linux", os: ubuntu-20.04 }
+
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Create binary directory
+        run: |
+          cmake -B build -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build project binary
+        run: |
+          cmake --build build --config Release

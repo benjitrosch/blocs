@@ -1,0 +1,43 @@
+#pragma once
+
+#include "blocs/math/matrix.h"
+#include "blocs/math/vec.h"
+#include "blocs/math/shapes.h"
+#include "blocs/math/color.h"
+#include "blocs/math/calc.h"
+
+#include "blocs/ecs/world.h"
+#include "blocs/ecs/sparse.h"
+#include "blocs/ecs/entities/entity.h"
+#include "blocs/ecs/entities/entitymanager.h"
+#include "blocs/ecs/components/component.h"
+#include "blocs/ecs/components/componentarray.h"
+#include "blocs/ecs/components/componentmanager.h"
+#include "blocs/ecs/systems/system.h"
+#include "blocs/ecs/systems/systemmanager.h"
+#include "blocs/ecs/resources/resource.h"
+#include "blocs/ecs/resources/resourcemanager.h"
+
+#include "blocs/graphics/renderer.h"
+#include "blocs/graphics/font.h"
+#include "blocs/graphics/image.h"
+#include "blocs/graphics/texture.h"
+#include "blocs/graphics/shader.h"
+#include "blocs/graphics/spritebatch.h"
+#include "blocs/graphics/spriteatlas.h"
+#include "blocs/graphics/spritefont.h"
+#include "blocs/graphics/shadermanager.h"
+#include "blocs/graphics/rendertarget.h"
+
+#include "blocs/platform/platform.h"
+#include "blocs/platform/input.h"
+#include "blocs/platform/filesystem.h"
+
+#include "blocs/debug/tests.h"
+#include "blocs/debug/explorer/serializer.h"
+#include "blocs/debug/explorer/network.h"
+#include "blocs/debug/explorer/monitor.h"
+
+#include "blocs/common.h"
+#include "blocs/game.h"
+#include "blocs/time.h"
